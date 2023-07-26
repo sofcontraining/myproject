@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from . models import Member 
 
 # Create your views here.
@@ -14,4 +14,13 @@ def member(request):
     return render(request, 'members.html', {'members':all_members})
 
 def contact(request):
+    if request.method == "POST":
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        age = request.POST['age']
+        dept = request.POST['dept']
+        image = request.FILES['image']
+        empdetails = Member(fname=fname, lname=lname, age=age, dept=dept, image=image)
+        empdetails.save()
+        return redirect('/members')
     return render(request, 'contact.html')

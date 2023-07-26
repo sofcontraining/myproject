@@ -3,4 +3,36 @@
 {% block body %}
 
 <h1>Contact Page</h1>
+
+<div class="container">
+    <form action="/contact" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="" name="fname" placeholder="First Name">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="" name="lname" placeholder="Last Name">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Age</label>
+            <input type="text" class="form-control" id="" name="age" placeholder="Age">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Department</label>
+            <input type="text" class="form-control" id="" name="dept" placeholder="Department">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Employee Photo</label>
+            <input type="file" class="form-control" id="" name="image" placeholder="Photo">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+
+
+</div>
+
 {% endblock body %}
