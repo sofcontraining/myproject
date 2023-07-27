@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from . models import Member 
+from myapp.models import Member 
 
 # Create your views here.
 def home(request):
