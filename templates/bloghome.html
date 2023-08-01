@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Latest Blogs</h1>
+
+<div class="container">
+    
+    <div class="row">
+        {% for post in allPosts %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{post.post_images.url}}" class="card-img-top" alt="..." height="200" width="200">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text">{{post.content | truncatechars:150}}</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+{% endblock body %}
+
+
