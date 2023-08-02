@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Awesome Blog</title>
+  <link rel="stylesheet" href="{% static 'CSS\style.css' %}">
+
+</head>
+<body>
+  <header>
+    <h1 class="blog-title">{{post.title}}</h1>
+  </header>
+  <main>
+    <article class="blog-post">
+      <h2 class="post-title">{{post.title}}</h2>
+      <p class="post-meta">Posted by <span class="post-author">{{post.author}}</span> on <span class="post-date">August 2, 2023</span></p>
+      <div class="post-content">
+        <p>{{post.content}}</p>
+        <img src="{{post.post_images.url}}">
+        <!-- Add more content here -->
+      </div>
+    </article>
+    <section class="comments-section">
+      <h3>Comments</h3>
+      <!-- Add comments section here -->
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 My Awesome Blog. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+{% endblock body %}
